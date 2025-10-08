@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "ALUNO")
+@Table(name = "TB_ALUNO")
 public class Aluno {
 
     @Id
@@ -19,6 +19,7 @@ public class Aluno {
     @Email
     @NotBlank
     private String email;
+
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "endereco_id", unique = true)
